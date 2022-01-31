@@ -1,8 +1,24 @@
 // Урок 2. Основные операторы JavaScript
 
-// Ряд Фибаначче
+// Ряд Фибаначче через рекурсию
 // 0 1 1 2 3 5 8 13
+/* 
+Данные эксперимента:
 
+Ряд Фибаначче через рекурсию
+
+Начало расчета Mon Jan 31 2022 18:56:04 GMT+0300 (GMT+03:00)
+Конец расчета Mon Jan 31 2022 19:02:04 GMT+0300 (GMT+03:00)
+50 число Фибаначчи = 12586269025
+
+Ряд Фибаначче через массив
+
+Начало расчета Mon Jan 31 2022 18:50:17 GMT+0300 (GMT+03:00)
+Конец расчета Mon Jan 31 2022 18:50:17 GMT+0300 (GMT+03:00)
+50 число Фибаначчи = 12586269025
+
+НЕ ПОНИМАЮ ЗАЧЕМ ИСПОЛЬЗОВАТЬ РЕКУРСИЮ
+*/
 
 function fibb(n) {
     if (n<=1) {
@@ -19,7 +35,6 @@ let nF = fibb(n);
 
 // Ряд Фибаначче через массив
 
-/*
 let arr = [0];
 let n = +prompt('Введите номер числа Фибаначче, значение которого хотите узнать');
 
@@ -32,13 +47,13 @@ for (let i = 1; i <= n; i++) {
         arr.push(arr[i-2] + arr[i-1]);
     }
 }
-*/
+
 console.log(`Конец расчета ${new Date()}`);
 console.log(`${n} число Фибаначчи = ${nF}`);
 
 
 // Игра "Угадай число"
-/*
+
 let N = 0;
 
 function guess(tC) {
@@ -60,9 +75,9 @@ function guess(tC) {
 }
 
 guess(1);
-*/
 
-/*
+
+
 // ДЗ
 // Задание 1. Дан код. Почему код даёт именно такие результаты?
 
@@ -78,7 +93,7 @@ alert(b);                    // 3
 
 let a = 2;
 let x = 1 + (a *= 2); // 5 (1 + (2*2) = 5)
-alert(x); */
+alert(x); 
 
 /* Задание 3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. 
 Затем написать скрипт, который работает по следующему принципу:
@@ -87,7 +102,7 @@ alert(x); */
 если а и b отрицательные, вывести их произведение;
 если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом. */
 
-/*
+
 let a;
 let b;
 
@@ -103,12 +118,12 @@ if ((a * b) >= 0) {
 } else {
     alert('А и В имеют разные знаки. Сумма А + В =  '+ (a+b));
 }   
-*/           
+          
 
 /* Задание 4. Присвоить переменной а значение в промежутке [0..15]. 
 С помощью оператора switch организовать вывод чисел от a до 15. */
 
-/*
+
 let a;
 let string='';
 
@@ -134,12 +149,12 @@ switch (a) {
 
 alert(string);
 
-*/
+
 
 /* Задание 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. 
 Обязательно использовать оператор return. */
 
-/*
+
 function getSumma(a, b) {
     return (a + b);
 }
@@ -158,14 +173,14 @@ function getDivide (a,b) {
 
 let numberA = +prompt('Введите число А');
 let numberB = +prompt('Введите число B');
-*/
 
-/*
+
+
 console.log(`${numberA} + ${numberB} = ${getSumma(numberA, numberB)}`);
 console.log(`${numberA} - ${numberB} = ${getMinus(numberA, numberB)}`);
 console.log(`${numberA} * ${numberB} = ${getProduct(numberA, numberB)}`);
 console.log(`${numberA} / ${numberB} = ${getDivide(numberA, numberB)}`);
-*/
+
 
 
 /* Задание 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
@@ -173,7 +188,7 @@ console.log(`${numberA} / ${numberB} = ${getDivide(numberA, numberB)}`);
 переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) 
 и вернуть полученное значение (использовать switch). */
 
-/*
+
 function mathOperation(arg1, arg2, operation) {
     switch (operation) {
         case '+': console.log(`${arg1} + ${arg2} = ${getSumma(arg1, arg2)}`);
@@ -195,7 +210,7 @@ mathOperation(numberA, numberB, operation);
 alert( null > 0 );  // (1) false
 alert( null == 0 ); // (2) false
 alert( null >= 0 ); // (3) true
-*/
+
 
 /*
 С точки зрения математики это странно. Результат последнего сравнения говорит о том, 
@@ -214,9 +229,9 @@ alert( null >= 0 ); // (3) true
 
 ПОДСМОТРЕЛА В УЧЕБНИКЕ    https://learn.javascript.ru/recursion*/
 
-/*
+
 function power(val, pow) {
-    return (pow == 1) ? val : (val * power(val, pow - 1)); 
+    return (pow > 0) ? 1 : (val * power(val, pow - 1)); 
 }
 
 let x = +prompt('Ведите число, которое надо возвести в степень');
@@ -228,4 +243,3 @@ if (n > 0) {
 } else {
     console.log('Вы ввели не правильное значение степени');
 }
-*/
